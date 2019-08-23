@@ -8,7 +8,7 @@ import (
 
 func Clear() error {
 	var command *exec.Cmd
-	if operatingSystem := runtime.GOOS; operatingSystem == "linux" || operatingSystem == "darwin" {
+	if operatingSystem := runtime.GOOS; operatingSystem == "linux" || operatingSystem == "darwin" || operatingSystem == "android" {
 		command = exec.Command("clear")
 	} else if operatingSystem == "windows" {
 		command = exec.Command("cmd", "/c", "cls")
